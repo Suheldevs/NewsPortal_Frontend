@@ -1,5 +1,6 @@
 import React from 'react';
 import { Play } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const VideosNews = () => {
   const videoItems = [
@@ -51,10 +52,13 @@ const VideosNews = () => {
     <div className="bg-white p-6 max-w-7xl mx-auto">
       {/* Header */}
       <div className="mb-6">
-        <div className="flex items-center mb-4">
-          <h2 className="text-2xl font-bold text-black mr-4">Videos</h2>
-        </div>
-        <div className="h-0.5 bg-red-500 w-full mb-6"></div>
+         <SectionHeader 
+          title="Video News"
+          viewMoreText="View More"
+          viewMoreLink="/tech"
+          // bgColor="bg-green-500"
+          // textColor="text-white"
+        />
         
         {/* Section Title */}
         <div className="flex items-center mb-6">

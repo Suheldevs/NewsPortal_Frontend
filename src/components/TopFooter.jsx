@@ -31,8 +31,8 @@ const TopFooter = () => {
   ];
 
   return (
-    <div className="bg-gray-900 text-white py-12 px-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-neutral-900 text-white py-12  px-6">
+      <div className="container px-4 mx-auto">
         
         {/* TOP CATEGORIES Section */}
         {/* <div className="mb-12">

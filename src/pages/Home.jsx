@@ -15,8 +15,9 @@ export default function Home() {
     <HeroSection/>
     <BreakingNews/>
     <BusinessNews/>
-    <VideosNews/>
+    <BreakingNews/>
     <WebStorySection/>
+    <VideosNews/>
     <TopFooter/>
     <Footer/>
     </>

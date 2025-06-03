@@ -14,6 +14,7 @@ import {
   Award,
   Target
 } from 'lucide-react';
+import HomeBanner from './Home/HomeBanner';
 
 const HeroSection = () => {
   const [bookmarkedArticles, setBookmarkedArticles] = useState([]);
@@ -123,87 +124,7 @@ const HeroSection = () => {
           {/* Main Content Area */}
           <div className="lg:col-span-3 space-y-6">
             
-            {/* Hero Articles */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {mainArticles.map((article) => (
-                <div key={article.id} className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 group">
-                  <div className="relative">
-                    <img 
-                      src={article.image} 
-                      alt={article.title}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    
-                    {/* Badges */}
-                    <div className="absolute top-4 left-4 flex space-x-2">
-                      <span className="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium">
-                        {article.category}
-                      </span>
-                      {article.isSponsored && (
-                        <span className="bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-medium">
-                          Sponsored
-                        </span>
-                      )}
-                      {article.isTrending && (
-                        <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center">
-                          <TrendingUp className="w-3 h-3 mr-1" />
-                          Trending
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Bookmark */}
-                    <button 
-                      onClick={() => toggleBookmark(article.id)}
-                      className="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
-                    >
-                      <Bookmark 
-                        className={`w-4 h-4 ${bookmarkedArticles.includes(article.id) ? 'fill-yellow-400 text-yellow-400' : 'text-white'}`} 
-                      />
-                    </button>
-                  </div>
-
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm text-gray-500 flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {article.timestamp}
-                      </span>
-                      <span className="text-sm text-gray-500">{article.readTime}</span>
-                    </div>
-
-                    <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors line-clamp-2">
-                      {article.title}
-                    </h2>
-
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {article.summary}
-                    </p>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4 text-sm text-gray-500">
-                        <span className="flex items-center">
-                          <Eye className="w-4 h-4 mr-1" />
-                          {article.views}
-                        </span>
-                        <span className="flex items-center">
-                          <MessageCircle className="w-4 h-4 mr-1" />
-                          {article.comments}
-                        </span>
-                      </div>
-                      
-                      <div className="flex items-center space-x-2">
-                        <span className="text-sm text-gray-600">By {article.author}</span>
-                        <button className="p-1 hover:bg-gray-100 rounded transition-colors">
-                          <Share2 className="w-4 h-4 text-gray-500" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+         <HomeBanner/>
 
             {/* Latest News Grid */}
             <div className="bg-white rounded-xl shadow-sm p-6">
@@ -248,28 +169,6 @@ const HeroSection = () => {
 
           {/* Sidebar */}
           <div className="space-y-6">
-            
-            {/* Live Updates */}
-            <div className="bg-white rounded-xl shadow-sm p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                <div className="w-2 h-2 bg-red-500 rounded-full mr-2 animate-pulse"></div>
-                Live Updates
-              </h3>
-              <div className="space-y-3">
-                {liveUpdates.map((update) => (
-                  <div key={update.id} className="flex items-center justify-between p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors cursor-pointer">
-                    <div>
-                      <h4 className="text-sm font-medium text-gray-900">{update.title}</h4>
-                      <span className="text-xs text-red-600">{update.category}</span>
-                    </div>
-                    <div className="flex items-center text-xs text-gray-500">
-                      <Users className="w-3 h-3 mr-1" />
-                      {update.viewers}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* Trending Topics */}
             <div className="bg-white rounded-xl shadow-sm p-6">
@@ -308,14 +207,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Ad Space */}
-            <div className="bg-gray-100 rounded-xl p-6 text-center">
-              <div className="text-gray-400 mb-2">
-                <Target className="w-8 h-8 mx-auto mb-2" />
-              </div>
-              <p className="text-sm text-gray-600">Advertisement Space</p>
-              <p className="text-xs text-gray-500 mt-1">300x250</p>
-            </div>
+           
           </div>
         </div>
       </div>

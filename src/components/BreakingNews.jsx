@@ -1,5 +1,6 @@
 import React from 'react';
 import { Clock } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const BreakingNews = () => {
   const newsItems = [
@@ -71,14 +72,22 @@ const BreakingNews = () => {
   };
 
   return (
-    <div className="bg-white p-6">
+    <div className="bg-white py-12 container px-6 mx-auto">
       {/* Header */}
-      <div className="flex items-center mb-6">
+      {/* <div className="flex items-center mb-6">
         <div className="bg-red-600 text-white px-4 py-2 font-bold text-sm">
           BREAKING NEWS
         </div>
         <div className="h-0.5 bg-red-600 flex-1 ml-2"></div>
-      </div>
+      </div> */}
+
+      <SectionHeader 
+          title="Breacking News"
+          viewMoreText="View More"
+          viewMoreLink="/tech"
+          // bgColor="bg-green-500"
+          // textColor="text-white"
+        />
 
       {/* News Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

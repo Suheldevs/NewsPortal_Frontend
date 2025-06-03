@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const BusinessNews = () => {
   const newsItems = [
@@ -70,7 +71,7 @@ const BusinessNews = () => {
   return (
     <div className="bg-white p-6 max-w-7xl mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      {/* <div className="flex items-center justify-between mb-6">
         <div className="flex items-center">
           <h2 className="text-2xl font-bold text-black mr-4">Business</h2>
           <div className="h-0.5 bg-red-500 w-20"></div>
@@ -79,7 +80,15 @@ const BusinessNews = () => {
           VIEW ALL
           <ArrowRight className="w-4 h-4 ml-1" />
         </button>
-      </div>
+      </div> */}
+
+       <SectionHeader 
+          title="Business"
+          viewMoreText="VIEW ALL"
+          viewMoreLink="/tech"
+          // bgColor="bg-green-500"
+          // textColor="text-white"
+        />
 
       {/* News Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
