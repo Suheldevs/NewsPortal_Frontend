@@ -73,20 +73,11 @@ const BreakingNews = () => {
 
   return (
     <div className="bg-white py-12 container px-6 mx-auto">
-      {/* Header */}
-      {/* <div className="flex items-center mb-6">
-        <div className="bg-red-600 text-white px-4 py-2 font-bold text-sm">
-          BREAKING NEWS
-        </div>
-        <div className="h-0.5 bg-red-600 flex-1 ml-2"></div>
-      </div> */}
 
       <SectionHeader 
           title="Breacking News"
-          viewMoreText="View More"
+          viewMoreText="View All"
           viewMoreLink="/tech"
-          // bgColor="bg-green-500"
-          // textColor="text-white"
         />
 
       {/* News Grid */}

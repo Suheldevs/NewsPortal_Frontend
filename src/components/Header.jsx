@@ -232,9 +232,10 @@ import {
   Clock,
   ChevronDown
 } from 'lucide-react';
+import TopNavbar from './Home/TopNavbar';
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] =   useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -311,25 +312,7 @@ const Header = () => {
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-red-600 text-white py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center">
-              <Calendar className="w-4 h-4 mr-2" />
-              {formattedDate}
-            </span>
-            <span className="flex items-center">
-              <Clock className="w-4 h-4 mr-2" />
-              {formattedTime}
-            </span>
-            <span className="hidden md:block text-yellow-200 font-medium">Breaking News !!</span>
-          </div>
-          <div className="flex items-center space-x-3">
-            <Bell className="w-4 h-4 cursor-pointer hover:text-red-200 transition-colors" />
-            <User className="w-4 h-4 cursor-pointer hover:text-red-200 transition-colors" />
-          </div>
-        </div>
-      </div>
+     <TopNavbar/>
 
       {/* Main Header */}
       <div className="container mx-auto px-4 py-4">
@@ -369,8 +352,8 @@ const Header = () => {
       <nav className="bg-gray-50 border-t border-gray-200">
         <div className="container mx-auto px-4">
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center justify-center space-x-1">
-            {categories.map((category, index) => (
+          <div className="hidden md:flex items-center justify-center space-x-0.5">
+            {categories.slice(0,7).map((category, index) => (
               <div key={index} className="relative">
                 {category.hasDropdown ? (
                   <button
@@ -411,6 +394,7 @@ const Header = () => {
                 )}
               </div>
             ))}
+          
           </div>
 
           {/* Mobile Menu */}

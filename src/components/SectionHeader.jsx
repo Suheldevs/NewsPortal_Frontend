@@ -24,9 +24,9 @@ const SectionHeader = ({
       {/* Right Side - View More Link */}
       <a 
         href={viewMoreLink}
-        className="text-gray-700 text-xs font-medium uppercase tracking-wider hover:text-gray-900 transition-colors duration-200 z-10"
+        className=" flex justify-center items-center text-red-600 text-sm font-medium  tracking-wider hover:text-gray-900 transition-colors duration-200 z-10"
       >
-        {viewMoreText} <ArrowRight className="w-4 inline-block h-4" />
+        {viewMoreText} <ArrowRight className="w-4 inline-block  h-4" />
       </a>
       
       {/* Full-width red line under button and above triangle */}
