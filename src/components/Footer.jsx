@@ -158,7 +158,7 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-gray-600 text-sm mb-3 md:mb-0">
-              © 2025 NewsPort. All rights reserved. | Designed with ❤️ in India
+              © 2025 NewsPort. All rights reserved. | Develope & Design By <a href='https://www.codecrafter.co.in' className='hover:underline'> Code Crafter</a>
             </div>
             <div className="flex items-center gap-4">
               <a href="#" className="text-gray-600 hover:text-red-500 text-sm transition-colors">Privacy Policy</a>

@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import WebStoriesPage from './webstory/WebStoriesPage'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import CategoryNewsPage from './pages/CategoryNewsPage'
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/web-stories' element={<WebStoriesPage/>} />
+      <Route path='/:slug' element={<CategoryNewsPage/>} />
     </Routes>
     <Footer/>
     </>
