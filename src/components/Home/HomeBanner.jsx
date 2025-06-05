@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Clock, Eye, MessageCircle, Share2, Bookmark, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import TrendingNow from './TrendingNow';
 
 // Mock data for articles
 const mainArticles = [
@@ -7,7 +8,7 @@ const mainArticles = [
     id: 1,
     title: "Breaking: Major Tech Breakthrough Announced",
     summary: "Scientists have made a groundbreaking discovery that could revolutionize the way we interact with technology in our daily lives.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/600/600?random=125",
     category: "Technology",
     author: "John Smith",
     timestamp: "2 hours ago",
@@ -21,7 +22,7 @@ const mainArticles = [
     id: 2,
     title: "Global Climate Summit Reaches Historic Agreement",
     summary: "World leaders unite on comprehensive climate action plan with unprecedented funding commitments for renewable energy projects.",
-    image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/600/600?random=12",
     category: "Environment",
     author: "Sarah Johnson",
     timestamp: "4 hours ago",
@@ -35,7 +36,7 @@ const mainArticles = [
     id: 3,
     title: "Stock Markets Surge Following Economic Report",
     summary: "Major indices hit record highs as quarterly economic data exceeds expectations, boosting investor confidence across sectors.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop",
+    image: "https://picsum.photos/600/600?random=13",
     category: "Finance",
     author: "Mike Chen",
     timestamp: "6 hours ago",
@@ -153,17 +154,7 @@ const HomeBanner = () => {
                       <span className="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium">
                         {article.category}
                       </span>
-                      {/* {article.isSponsored && (
-                        <span className="bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-medium">
-                          Sponsored
-                        </span>
-                      )} */}
-                      {/* {article.isTrending && (
-                        <span className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center">
-                          <TrendingUp className="w-4 h-4 mr-1" />
-                          Trending
-                        </span>
-                      )} */}
+                     
                     </div>
 
                     {/* Bookmark */}
@@ -190,9 +181,9 @@ const HomeBanner = () => {
                         {article.title}
                       </h1>
 
-                      <p className="text-lg text-gray-200 mb-6 leading-relaxed">
+                      {/* <p className="text-lg text-gray-200 mb-6 leading-relaxed">
                         {article.summary}
-                      </p>
+                      </p> */}
 
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-6 text-gray-200">
@@ -240,51 +231,7 @@ const HomeBanner = () => {
 
         {/* Side Section (1/3) */}
         <div className="lg:w-1/3">
-          <div className="bg-white rounded-2xl shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <TrendingUp className="w-6 h-6 mr-2 text-red-500" />
-              Trending Now
-            </h2>
-            
-            <div className="space-y-6">
-              {sideArticles.map((article, index) => (
-                <div key={article.id} className="group cursor-pointer">
-                  <div className="flex space-x-4">
-                    <div className="relative flex-shrink-0">
-                      <img 
-                        src={article.image} 
-                        alt={article.title}
-                        className="w-20 h-20 object-cover rounded-lg group-hover:scale-105 transition-transform duration-200"
-                      />
-                      <span className="absolute -top-2 -left-2 bg-red-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">
-                        {index + 1}
-                      </span>
-                    </div>
-                    
-                    <div className="flex-1 min-w-0">
-                      {/* <span className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium mb-2">
-                        {article.category}
-                      </span> */}
-                      <h3 className="font-semibold text-gray-900 group-hover:text-red-600 transition-colors mb-1 line-clamp-2">
-                        {article.title}
-                      </h3>
-                      {/* <p className="text-sm text-gray-600 mb-2 line-clamp-2">
-                        {article.summary}
-                      </p> */}
-                      <span className="text-xs text-gray-500 flex items-center">
-                        <Clock className="w-3 h-3 mr-1" />
-                        {article.timestamp}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {index < sideArticles.length - 1 && (
-                    <hr className="mt-6 border-gray-100" />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+         <TrendingNow/>
         </div>
       </div>
     </div>
