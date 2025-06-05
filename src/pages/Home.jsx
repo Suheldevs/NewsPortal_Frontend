@@ -11,7 +11,7 @@ import Footer from '../components/Footer'
 export default function Home() {
   return (
     <>
-    <Header/>
+  
     <HeroSection/>
     <BreakingNews/>
     <BusinessNews/>
@@ -19,7 +19,6 @@ export default function Home() {
     <WebStorySection/>
     <VideosNews/>
     <TopFooter/>
-    <Footer/>
     </>
   )
 }

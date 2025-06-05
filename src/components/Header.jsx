@@ -230,10 +230,13 @@ import {
   Shield,
   Calendar,
   Clock,
-  ChevronDown
+  ChevronDown,
+  GalleryVerticalEnd,
+  GalleryVertical,
+  GalleryHorizontalEnd
 } from 'lucide-react';
 import TopNavbar from './Home/TopNavbar';
-
+import {Link} from 'react-router-dom'
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] =   useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -282,7 +285,7 @@ const Header = () => {
     { 
       name: 'International', 
       icon: <Globe className="w-4 h-4" />, 
-      hasDropdown: true,
+      hasDropdown: false,
       subcategories: ['USA', 'Europe', 'China', 'Russia', 'Middle East', 'World Politics']
     },
     { 
@@ -304,6 +307,7 @@ const Header = () => {
       hasDropdown: true,
       subcategories: ['Mobile', 'Gadgets', 'AI', 'Cyber Security', 'Apps', 'Reviews']
     },
+    
     { name: 'Auto', icon: <Car className="w-4 h-4" />, hasDropdown: false },
     { name: 'Lifestyle', icon: <TrendingUp className="w-4 h-4" />, hasDropdown: false },
     { name: 'Health', icon: <Shield className="w-4 h-4" />, hasDropdown: false }
@@ -353,48 +357,56 @@ const Header = () => {
         <div className="container mx-auto px-4">
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center justify-center space-x-0.5">
-            {categories.slice(0,7).map((category, index) => (
+            {categories.slice(0,9).map((category, index) => (
               <div key={index} className="relative">
                 {category.hasDropdown ? (
                   <button
                     onClick={() => toggleDropdown(index)}
                     className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
                   >
-                    <span className="mr-2 group-hover:scale-110 transition-transform">
+                    {/* <span className="mr-2 group-hover:scale-110 transition-transform">
                       {category.icon}
-                    </span>
+                    </span> */}
                     {category.name}
                     <ChevronDown className="w-4 h-4 ml-1" />
                   </button>
                 ) : (
-                  <a
-                    href={`/${category.name.toLowerCase()}`}
+                  <Link
+                    to={`/${category.name.toLowerCase()}`}
                     className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
                   >
-                    <span className="mr-2 group-hover:scale-110 transition-transform">
+                    {/* <span className="mr-2 group-hover:scale-110 transition-transform">
                       {category.icon}
-                    </span>
+                    </span> */}
                     {category.name}
-                  </a>
+                  </Link>
                 )}
                 
                 {/* Dropdown */}
                 {category.hasDropdown && activeDropdown === index && (
                   <div className="absolute top-full left-0 bg-white border border-gray-200 rounded-b-lg shadow-lg min-w-48 z-50">
                     {category.subcategories.map((sub, subIndex) => (
-                      <a
+                      <Link
                         key={subIndex}
-                        href={`/${category.name.toLowerCase()}/${sub.toLowerCase()}`}
+                        to={`/${category.name.toLowerCase()}/${sub.toLowerCase()}`}
                         className="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
                       >
                         {sub}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
               </div>
             ))}
-          
+          <Link
+                    to={`/web-stories`}
+                    className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
+                  >
+                    <span className="mr-2 group-hover:scale-110 transition-transform">
+                     <GalleryHorizontalEnd className='h-4 w-4 rotate-180' />
+                    </span>
+                    Web Stories
+                  </Link>
           </div>
 
           {/* Mobile Menu */}
