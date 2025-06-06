@@ -9,6 +9,7 @@ import {
   Youtube,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function TopNavbar() {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -88,10 +89,10 @@ function TopNavbar() {
 
             {/* Account Section */}
             <div className="flex items-center space-x-3 border-l border-red-400 pl-4">
-              <span className="flex items-center cursor-pointer hover:text-red-200 transition-colors">
+              <Link to='/login' className="flex items-center cursor-pointer hover:text-red-200 transition-colors">
                 <User className="w-4 h-4 mr-1" />
-                <span className="hidden sm:inline">Account</span>
-              </span>
+                <span className="hidden sm:inline">Login</span>
+              </Link>
               <Bell className="w-4 h-4 cursor-pointer hover:text-red-200 transition-colors" />
             </div>
           </div>

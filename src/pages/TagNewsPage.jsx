@@ -33,7 +33,7 @@ const articlesData = [
     excerpt: "Banking and IT stocks lead the rally as investors show confidence in economic recovery measures announced by the government.",
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=200&fit=crop",
     date: "JUNE 5, 2025 13:30 IST",
-    tags: ["business", "stock-market", "sensex", "nifty", "banking"]
+    tags: ["election", "stock-market", "sensex", "nifty", "banking"]
   },
   {
     id: 5,

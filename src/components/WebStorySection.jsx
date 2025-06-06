@@ -109,8 +109,8 @@ const WebStorySection = () => {
         {/* Header */}
         <div className="flex items-center justify-center mb-8 pb-4 border-b border-gray-200">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">TH</span>
+            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-sm">THE</span>
             </div>
             <h2 className="text-3xl font-bold text-red-600">Shorts</h2>
           </div>

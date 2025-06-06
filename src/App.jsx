@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import CategoryNewsPage from './pages/CategoryNewsPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
 import TagNewsPage from './pages/TagNewsPage'
+import UserLoginPage from './pages/UserLoginPage'
 function App() {
   return (
     <>
@@ -15,9 +16,10 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/web-stories' element={<WebStoriesPage/>} />
-      <Route path='/:slug' element={<CategoryNewsPage/>} />
+      <Route path='/news/:slug' element={<CategoryNewsPage/>} />
       <Route path='/article/:slug' element={<ArticleDetailPage/>} />
       <Route path='/tag/:slug' element={<TagNewsPage/>} />
+      <Route path='/login' element={<UserLoginPage/>} />
     </Routes>
     <Footer/>
     </>

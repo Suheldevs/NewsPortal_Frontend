@@ -239,6 +239,7 @@ import {
 } from "lucide-react";
 import TopNavbar from "./Home/TopNavbar";
 import { Link } from "react-router-dom";
+import Searchbar from "./Home/Searchbar";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -395,16 +396,7 @@ const Header = () => {
           </div>
 
           {/* Search Bar - Desktop */}
-          <div className="hidden md:flex items-center flex-1 max-w-md mx-8">
-            <div className="relative w-full">
-              <input
-                type="text"
-                placeholder="Search news..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-full pr-10 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-              />
-              <Search className="absolute right-3 top-2.5 w-5 h-5 text-gray-400" />
-            </div>
-          </div>
+        <Searchbar/>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -437,7 +429,7 @@ const Header = () => {
               <div key={index} className="relative">
                 {category.hasDropdown ? (
                   <Link
-                   to={`/${category.name.toLowerCase()}`}
+                   to={`/news/${category.name.toLowerCase()}`}
                     onMouseEnter={() => toggleDropdown(index)}
                     className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
                   >
@@ -446,7 +438,7 @@ const Header = () => {
                   </Link>
                 ) : (
                   <Link
-                    to={`/${category.name.toLowerCase()}`}
+                    to={`/news/${category.name.toLowerCase()}`}
                     className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
                   >
                     {category.name}
@@ -495,7 +487,7 @@ const Header = () => {
                 {categories.slice(7, 9).map((sub, subIndex) => (
                   <Link
                     key={subIndex}
-                    to={`/${sub.name}`}
+                    to={`/news/${sub.name}`}
                     className="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
                   >
                     {sub.name}

@@ -96,11 +96,11 @@ const HeroSection = () => {
   ];
 
   const trendingTopics = [
-    { name: "Election Results", count: "45.2K" },
-    { name: "Stock Market", count: "32.1K" },
-    { name: "Climate Change", count: "28.9K" },
-    { name: "Tech Innovation", count: "24.5K" },
-    { name: "Sports Updates", count: "19.8K" }
+    { name: "Election Results", count: "45.2K", slug:'election' },
+    { name: "Stock Market", count: "32.1K", slug:'trump' },
+    { name: "Covid 19 India", count: "28.9K", slug:'health' },
+    { name: "Tech Innovation", count: "24.5K", slug:'election' },
+    { name: "Delhi Rohini Blasts", count: "19.8K", slug:'delhi' }
   ];
 
   const liveUpdates = [
@@ -141,7 +141,7 @@ const HeroSection = () => {
               </h3>
               <div className="space-y-3">
                 {trendingTopics.map((topic, index) => (
-                  <Link to={`/tag/${topic.name}`} key={index}  className="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 px-2 rounded transition-colors cursor-pointer">
+                  <Link to={`/tag/${topic.slug}`} key={index}  className="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 px-2 rounded transition-colors cursor-pointer">
                     <div className="flex items-center">
                       <span className="text-sm font-medium text-gray-700 mr-2">#{index + 1}</span>
                       <span className="text-sm text-gray-900">{topic.name}</span>
