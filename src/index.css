@@ -84,3 +84,11 @@ body {
     font-size: 0.95rem;
   }
 }
+
+
+
+
+
+/* Hide unwanted Google branding (optional, but against terms) */
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0px !important; }

@@ -12,7 +12,7 @@ navigate(`/article/${slug}`)
    <div className="bg-white rounded-xl shadow-sm p-6">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-bold text-gray-900">Latest News</h3>
-                <Link to='/latest' className="flex items-center text-red-600 hover:text-red-700 font-medium">
+                <Link to='/news/latest' className="flex items-center text-red-600 hover:text-red-700 font-medium">
                   View All <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
               </div>

@@ -112,7 +112,7 @@ const WebStorySection = () => {
             <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-sm">THE</span>
             </div>
-            <h2 className="text-3xl font-bold text-red-600">Shorts</h2>
+            <h2 className="text-3xl font-bold text-red-600">Visaul News</h2>
           </div>
         </div>
 

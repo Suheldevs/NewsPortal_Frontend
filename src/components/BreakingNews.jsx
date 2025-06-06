@@ -78,7 +78,7 @@ const BreakingNews = () => {
       <SectionHeader 
           title="Breacking News"
           viewMoreText="View All"
-          viewMoreLink="/breacking"
+          viewMoreLink="/news/breacking"
         />
 
       {/* News Grid */}

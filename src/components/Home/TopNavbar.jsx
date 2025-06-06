@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import GoogleTranslate from "../GoogleTranslate";
 
 function TopNavbar() {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -93,7 +94,9 @@ function TopNavbar() {
                 <User className="w-4 h-4 mr-1" />
                 <span className="hidden sm:inline">Login</span>
               </Link>
-              <Bell className="w-4 h-4 cursor-pointer hover:text-red-200 transition-colors" />
+             <div className="z-20">
+              <GoogleTranslate/>
+             </div>
             </div>
           </div>
         </div>
