@@ -146,8 +146,7 @@ const NewsItem = ({ news }) => {
   return (
     <div className="border-b border-dotted border-gray-600 py-4">
       <div className="grid grid-cols-12 gap-4">
-        {/* Left Column - Text Content (col-6) */}
-        <div className="col-span-6">
+        <div className="col-span-6">                        
           <h3 className="text-lg font-bold play text-gray-900 leading-tight mb-2 hover:text-red-600 cursor-pointer">
             {news.title}
           </h3>

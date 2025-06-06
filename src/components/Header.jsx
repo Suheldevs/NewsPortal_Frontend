@@ -1,10 +1,10 @@
 // import React, { useState } from 'react';
-// import { 
-//   Menu, 
-//   X, 
-//   Search, 
-//   Bell, 
-//   User, 
+// import {
+//   Menu,
+//   X,
+//   Search,
+//   Bell,
+//   User,
 //   ChevronDown,
 //   Globe,
 //   TrendingUp,
@@ -139,7 +139,7 @@
 //                   <span className="ml-2">{category.name}</span>
 //                   <ChevronDown className="w-4 h-4 ml-1" />
 //                 </button>
-                
+
 //                 {/* Dropdown */}
 //                 {activeDropdown === index && (
 //                   <div className="absolute top-full left-0 bg-white border border-gray-200 rounded-b-lg shadow-lg min-w-48 z-50">
@@ -170,7 +170,7 @@
 //                 />
 //                 <Search className="absolute right-3 top-2.5 w-5 h-5 text-gray-400" />
 //               </div>
-              
+
 //               <a href="/" className="block px-4 py-2 text-gray-700 hover:bg-white rounded font-medium">
 //                 होम
 //               </a>
@@ -186,7 +186,7 @@
 //                     </div>
 //                     <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === index ? 'rotate-180' : ''}`} />
 //                   </button>
-                  
+
 //                   {activeDropdown === index && (
 //                     <div className="ml-6 mt-2 space-y-1">
 //                       {category.subcategories.map((sub, subIndex) => (
@@ -212,14 +212,13 @@
 
 // export default Header;
 
-
-import React, { useState, useEffect } from 'react';
-import { 
-  Menu, 
-  X, 
-  Search, 
-  Bell, 
-  User, 
+import React, { useState, useEffect } from "react";
+import {
+  Menu,
+  X,
+  Search,
+  Bell,
+  User,
   Globe,
   TrendingUp,
   Briefcase,
@@ -236,15 +235,15 @@ import {
   GalleryHorizontalEnd,
   BellElectric,
   MenuIcon,
-  Ellipsis
-} from 'lucide-react';
-import TopNavbar from './Home/TopNavbar';
-import {Link} from 'react-router-dom'
+  Ellipsis,
+} from "lucide-react";
+import TopNavbar from "./Home/TopNavbar";
+import { Link } from "react-router-dom";
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] =   useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
-const [more, setMore] = useState(null)
+  const [more, setMore] = useState(null);
   // Update time every second
   useEffect(() => {
     const timer = setInterval(() => {
@@ -255,18 +254,18 @@ const [more, setMore] = useState(null)
   }, []);
 
   const formatDateTime = (date) => {
-    const options = { 
-      weekday: 'long', 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     };
-    const formattedDate = date.toLocaleDateString('en-US', options);
-    const formattedTime = date.toLocaleTimeString('en-US', { 
-      hour12: true, 
-      hour: '2-digit', 
-      minute: '2-digit',
-      second: '2-digit'
+    const formattedDate = date.toLocaleDateString("en-US", options);
+    const formattedTime = date.toLocaleTimeString("en-US", {
+      hour12: true,
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
     });
     return { formattedDate, formattedTime };
   };
@@ -274,61 +273,116 @@ const [more, setMore] = useState(null)
   const { formattedDate, formattedTime } = formatDateTime(currentDateTime);
 
   const toggleDropdown = (index) => {
-    if(index == 'more'){
-setMore(!more)
+    if (index == "more") {
+      setMore(!more);
     }
     setActiveDropdown(activeDropdown === index ? null : index);
   };
 
   const categories = [
     // { name: 'Home', icon: <Globe className="w-4 h-4" />, hasDropdown: false },
-    { 
-      name: 'National', 
-      icon: <Globe className="w-4 h-4" />, 
+    {
+      name: "National",
+      icon: <Globe className="w-4 h-4" />,
       hasDropdown: false,
-      subcategories: ['Delhi', 'Mumbai', 'Kolkata', 'Chennai', 'Bangalore', 'Politics']
+      subcategories: [
+        "Delhi",
+        "Mumbai",
+        "Kolkata",
+        "Chennai",
+        "Bangalore",
+        "Politics",
+      ],
     },
-    { 
-      name: 'International', 
-      icon: <Globe className="w-4 h-4" />, 
+    {
+      name: "International",
+      icon: <Globe className="w-4 h-4" />,
       hasDropdown: false,
-      subcategories: ['USA', 'Europe', 'China', 'Russia', 'Middle East', 'World Politics']
+      subcategories: [
+        "USA",
+        "Europe",
+        "China",
+        "Russia",
+        "Middle East",
+        "World Politics",
+      ],
     },
-    { 
-      name: 'Politics', 
-      icon: <BellElectric className="w-4 h-4" />, 
+    {
+      name: "Politics",
+      icon: <BellElectric className="w-4 h-4" />,
       hasDropdown: false,
-      subcategories: ['USA', 'Europe', 'China', 'Russia', 'Middle East', 'World Politics']
+      subcategories: [
+        "USA",
+        "Europe",
+        "China",
+        "Russia",
+        "Middle East",
+        "World Politics",
+      ],
     },
-    { 
-      name: 'Business', 
-      icon: <Briefcase className="w-4 h-4" />, 
+    {
+      name: "Business",
+      icon: <Briefcase className="w-4 h-4" />,
       hasDropdown: true,
-      subcategories: ['Stock Market', 'Banking', 'Economy', 'Crypto', 'Startups', 'Corporate']
+      subcategories: [
+        "Stock Market",
+        "Banking",
+        "Economy",
+        "Crypto",
+        "Startups",
+        "Corporate",
+      ],
     },
-    { 
-      name: 'Sports', 
-      icon: <Gamepad2 className="w-4 h-4" />, 
+    {
+      name: "Sports",
+      icon: <Gamepad2 className="w-4 h-4" />,
       hasDropdown: true,
-      subcategories: ['Cricket', 'Football', 'Tennis', 'Badminton', 'Hockey', 'Olympics']
+      subcategories: [
+        "Cricket",
+        "Football",
+        "Tennis",
+        "Badminton",
+        "Hockey",
+        "Olympics",
+      ],
     },
-    { name: 'Entertainment', icon: <Heart className="w-4 h-4" />, hasDropdown: false },
-    { 
-      name: 'Technology', 
-      icon: <Lightbulb className="w-4 h-4" />, 
+    {
+      name: "Entertainment",
+      icon: <Heart className="w-4 h-4" />,
+      hasDropdown: false,
+    },
+    {
+      name: "Technology",
+      icon: <Lightbulb className="w-4 h-4" />,
       hasDropdown: true,
-      subcategories: ['Mobile', 'Gadgets', 'AI', 'Cyber Security', 'Apps', 'Reviews']
+      subcategories: [
+        "Mobile",
+        "Gadgets",
+        "AI",
+        "Cyber Security",
+        "Apps",
+        "Reviews",
+      ],
     },
-    
-    { name: 'Auto', icon: <Car className="w-4 h-4" />, hasDropdown: false },
-    { name: 'Lifestyle', icon: <TrendingUp className="w-4 h-4" />, hasDropdown: false },
-    { name: 'Health', icon: <Shield className="w-4 h-4" />, hasDropdown: false }
+
+    { name: "Auto", icon: <Car className="w-4 h-4" />, hasDropdown: false },
+    {
+      name: "Lifestyle",
+      icon: <TrendingUp className="w-4 h-4" />,
+      hasDropdown: false,
+    },
+    {
+      name: "Health",
+      icon: <Shield className="w-4 h-4" />,
+      hasDropdown: false,
+    },
   ];
 
   return (
+    <>
+     <TopNavbar />
     <header className="bg-white shadow-lg sticky top-0 z-50">
       {/* Top Bar */}
-     <TopNavbar/>
 
       {/* Main Header */}
       <div className="container mx-auto px-4 py-4">
@@ -358,7 +412,11 @@ setMore(!more)
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-md hover:bg-gray-100 transition-colors"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -370,21 +428,22 @@ setMore(!more)
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center justify-center space-x-0.5">
             <Link
-                    to='/'
-                    className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
-                  >
-                    Home
-                  </Link>
-            {categories.slice(0,8).map((category, index) => (
+              to="/"
+              className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
+            >
+              Home
+            </Link>
+            {categories.slice(0, 8).map((category, index) => (
               <div key={index} className="relative">
                 {category.hasDropdown ? (
-                  <button
+                  <Link
+                   to={`/${category.name.toLowerCase()}`}
                     onMouseEnter={() => toggleDropdown(index)}
                     className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
                   >
                     {category.name}
                     <ChevronDown className="w-4 h-4 ml-1" />
-                  </button>
+                  </Link>
                 ) : (
                   <Link
                     to={`/${category.name.toLowerCase()}`}
@@ -393,10 +452,13 @@ setMore(!more)
                     {category.name}
                   </Link>
                 )}
-                
+
                 {/* Dropdown */}
                 {category.hasDropdown && activeDropdown === index && (
-                  <div onMouseLeave={() => toggleDropdown(index)} className="absolute top-full left-0 bg-white border border-gray-200 rounded-b-lg shadow-lg min-w-48 z-50">
+                  <div
+                    onMouseLeave={() => toggleDropdown(index)}
+                    className="absolute top-full left-0 bg-white border border-gray-200 rounded-b-lg shadow-lg min-w-48 z-50"
+                  >
                     {category.subcategories.map((sub, subIndex) => (
                       <Link
                         key={subIndex}
@@ -410,35 +472,37 @@ setMore(!more)
                 )}
               </div>
             ))}
-          <Link
-                    to={`/web-stories`}
-                    className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
+            <Link
+              to={`/web-stories`}
+              className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
+            >
+              <span className="mr-2 group-hover:scale-110 transition-transform">
+                <GalleryHorizontalEnd className="h-4 w-4 rotate-180" />
+              </span>
+              Web Stories
+            </Link>
+            <button
+              onClick={() => toggleDropdown("more")}
+              className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
+            >
+              <Ellipsis className="w-6 h-6" />
+            </button>
+            {more && (
+              <div
+                onMouseLeave={() => toggleDropdown("more")}
+                className="absolute top-full right-2 bg-white border border-gray-200 rounded-b-lg shadow-lg min-w-48 z-50"
+              >
+                {categories.slice(7, 9).map((sub, subIndex) => (
+                  <Link
+                    key={subIndex}
+                    to={`/${sub.name}`}
+                    className="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
                   >
-                    <span className="mr-2 group-hover:scale-110 transition-transform">
-                     <GalleryHorizontalEnd className='h-4 w-4 rotate-180' />
-                    </span>
-                    Web Stories
+                    {sub.name}
                   </Link>
-                  <button
-                    onClick={() => toggleDropdown('more')}
-                    className="flex items-center px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-white rounded-t-lg font-medium transition-all duration-200 group"
-                  >
-                    
-                    <Ellipsis className="w-6 h-6" />
-                  </button>
-                    {more && (
-                  <div onMouseLeave={() => toggleDropdown('more')} className="absolute top-full right-2 bg-white border border-gray-200 rounded-b-lg shadow-lg min-w-48 z-50">
-                    {categories.slice(7,9).map((sub, subIndex) => (
-                      <Link
-                        key={subIndex}
-                        to={`/${sub.name}`}
-                        className="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
-                      >
-                        {sub.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu */}
@@ -453,7 +517,7 @@ setMore(!more)
                 />
                 <Search className="absolute right-3 top-2.5 w-5 h-5 text-gray-400" />
               </div>
-              
+
               {categories.map((category, index) => (
                 <div key={index}>
                   {category.hasDropdown ? (
@@ -466,9 +530,13 @@ setMore(!more)
                           <span className="mr-3">{category.icon}</span>
                           {category.name}
                         </div>
-                        <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === index ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${
+                            activeDropdown === index ? "rotate-180" : ""
+                          }`}
+                        />
                       </button>
-                      
+
                       {activeDropdown === index && (
                         <div className="ml-6 mt-2 space-y-1">
                           {category.subcategories.map((sub, subIndex) => (
@@ -501,6 +569,7 @@ setMore(!more)
         </div>
       </nav>
     </header>
+    </>
   );
 };
 

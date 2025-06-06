@@ -1,7 +1,8 @@
 import React from 'react';
 import { Clock } from 'lucide-react';
 import SectionHeader from './SectionHeader';
-
+import articles from '../data/ArticlesData';
+import FormatDate from './FormateDate';
 const BreakingNews = () => {
   const newsItems = [
     {
@@ -77,16 +78,16 @@ const BreakingNews = () => {
       <SectionHeader 
           title="Breacking News"
           viewMoreText="View All"
-          viewMoreLink="/tech"
+          viewMoreLink="/breacking"
         />
 
       {/* News Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {newsItems.map((item) => (
+        {articles.slice(0,8).map((item) => (
           <div key={item.id} className="border border-gray-200 overflow-hidden">
             {/* Image */}
-            <div className="h-40 bg-gray-300 relative">
-              <div className="w-full h-full bg-gradient-to-br from-gray-400 to-gray-500"></div>
+            <div className=" bg-gray-300 relative">
+          <img src={item.thumbnail} className='h-44 w-full' alt={item.title} />
             </div>
             
             {/* Content */}
@@ -104,7 +105,7 @@ const BreakingNews = () => {
               {/* Time */}
               <div className="flex items-center text-xs text-gray-500">
                 <Clock className="w-3 h-3 mr-1" />
-                {item.time}
+                {FormatDate(item.publishedAt)}
               </div>
             </div>
           </div>

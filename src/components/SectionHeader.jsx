@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SectionHeader = ({ 
   title = "TOP NEWS", 
@@ -22,12 +23,12 @@ const SectionHeader = ({
       </div>
 
       {/* Right Side - View More Link */}
-      <a 
-        href={viewMoreLink}
+      <Link 
+        to={viewMoreLink}
         className=" flex justify-center items-center text-red-600 text-sm font-medium  tracking-wider hover:text-gray-900 transition-colors duration-200 z-10"
       >
         {viewMoreText} <ArrowRight className="w-4 inline-block  h-4" />
-      </a>
+      </Link>
       
       {/* Full-width red line under button and above triangle */}
       <div className="absolute left-0 right-0 bottom-[6px] h-0.5 bg-red-600 z-10" />
