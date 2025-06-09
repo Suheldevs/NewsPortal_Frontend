@@ -19,7 +19,7 @@ const GoogleTranslate = () => {
     };
   }, []);
 
-  return <div id="google_translate_element" className="text-sm" />;
+  return <div id="google_translate_element" className="text-sm h-4 overflow-hidden" />;
 };
 
 export default GoogleTranslate;

@@ -11,10 +11,10 @@ import {
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import GoogleTranslate from "../GoogleTranslate";
+import { useGetPostsQuery } from "../../redux/apiSlice";
 
 function TopNavbar() {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
-  // Update time every second
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentDateTime(new Date());
@@ -39,8 +39,13 @@ function TopNavbar() {
     });
     return { formattedDate, formattedTime };
   };
-
   const { formattedDate, formattedTime } = formatDateTime(currentDateTime);
+
+
+
+
+const data = useGetPostsQuery()
+console.log(data)
   return (
     <>
       <div className="bg-red-600 text-white py-2">
@@ -95,7 +100,7 @@ function TopNavbar() {
                 <span className="hidden sm:inline">Login</span>
               </Link>
              <div className="z-20">
-              <GoogleTranslate/>
+              {/* <GoogleTranslate/> */}
              </div>
             </div>
           </div>
